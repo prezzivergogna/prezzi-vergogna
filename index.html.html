@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#d71920"><title>PREZZI VERGOGNA — Il Tripadvisor dei prezzi</title>
+<style>
+:root{--r:#d71920;--ink:#171717;--muted:#686868;--bg:#f6f5f2;--line:#e7e4df}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:3}.nav,main,.foot{max-width:1080px;margin:auto;padding-left:22px;padding-right:22px}.nav{height:66px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:950;letter-spacing:-1px}.brand span,h1 em{color:var(--r)}a{color:inherit;text-decoration:none}.btn{display:inline-block;border:0;border-radius:999px;background:var(--r);color:white;padding:13px 19px;font-weight:850;cursor:pointer}.hero{padding:70px 0 48px;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}.eyebrow{font-size:12px;font-weight:900;color:var(--r);letter-spacing:1.5px;text-transform:uppercase}h1{font-size:clamp(42px,6vw,72px);letter-spacing:-3px;line-height:.98;margin:13px 0} .hero p{font-size:18px;color:#555;line-height:1.5}.manifesto{background:#171717;color:#fff;padding:28px;border-radius:22px}.manifesto strong{font-size:27px;line-height:1.15;display:block}.manifesto p{font-size:14px;color:#ddd}.band,.panel{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px}.band{margin:0 0 55px;display:flex;justify-content:space-between;gap:15px}.band small,.hint{color:var(--muted)}section{padding-bottom:65px}.head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:20px}.head h2{font-size:32px;letter-spacing:-1px;margin:5px 0}.head p{max-width:550px;color:#666;line-height:1.5}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel h3{margin:0 0 6px;font-size:21px}.hint{font-size:13px;line-height:1.45}label{display:block;font-weight:800;font-size:13px;margin:14px 0 6px}input,select,textarea{width:100%;padding:12px;border:1px solid #d6d2cb;border-radius:10px;font:inherit;background:#fff}textarea{min-height:90px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{display:flex;gap:8px;font-weight:500;color:#555;line-height:1.4}.check input{width:auto}.feed{display:grid;gap:12px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}.tag{font-size:10px;font-weight:900;border-radius:30px;padding:6px 9px;background:#e9f5ed;color:#21633b}.card h4{margin:10px 0 4px;font-size:17px}.card p{font-size:14px;line-height:1.45;color:#555}.price{font-size:22px;font-weight:950}.meta{font-size:12px;color:#777}.tools{display:flex;gap:8px;margin:12px 0}.tools input,.tools select{min-width:0}.note{margin-top:14px;padding:12px;background:#fff7e5;border:1px solid #eeddb3;border-radius:10px;color:#69552c;font-size:12px;line-height:1.5}footer{background:#171717;color:#fff;padding:28px 0}footer p{font-size:13px;color:#bbb;line-height:1.5}.status{margin:12px 0;padding:10px;border-radius:9px;font-size:13px;background:#f1f0ed;color:#555}.status.ok{background:#e9f5ed;color:#21633b}.status.err{background:#fff0f0;color:#a20f16}
+@media(max-width:750px){.hero,.grid{grid-template-columns:1fr}.hero{padding-top:45px}.band,.head{display:block}.head p{margin-bottom:0}.two{grid-template-columns:1fr}.tools{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand">PREZZI <span>VERGOGNA</span></div><a class="btn" href="#segnala">SEGNALA UN PREZZO</a></div></header>
+<main>
+<section class="hero"><div><div class="eyebrow">La voce dei consumatori</div><h1>HAI PAGATO TROPPO?<br><em>FALLO SAPERE A TUTTI.</em></h1><p>Il Tripadvisor dei prezzi. Racconta quanto hai pagato, documenta la tua esperienza e rendi la segnalazione visibile agli altri consumatori.</p><a class="btn" href="#segnala">🔴 Segnala un prezzo vergognoso</a></div><div class="manifesto"><strong>Il prezzo lo decide chi vende. Il consumatore ha il diritto di discuterlo.</strong><p>Qui si parla soltanto di prezzi: costi inattesi, supplementi non comunicati, prezzi eccessivi e poca trasparenza.</p></div></section>
+<div class="band"><strong>Non è un comparatore. È una piazza pubblica sui prezzi.</strong><small>Segnalazioni documentate · Moderazione · Diritto di replica</small></div>
+<section id="segnala"><div class="head"><div><div class="eyebrow">La tua esperienza conta</div><h2>Segnala un prezzo</h2></div><p>Le segnalazioni inviate entrano in revisione e non diventano visibili al pubblico automaticamente. Non inserire dati personali o accuse non dimostrate.</p></div>
+<div class="grid"><div class="panel"><h3>🔴 Racconta cosa è successo</h3><p class="hint">I campi con * sono obbligatori. In questa prima integrazione non carichiamo ancora foto o scontrini: prima predisponiamo una gestione sicura delle prove.</p>
+<form id="form">
+<label for="business">Nome dell'attività *</label><input id="business" maxlength="100" required>
+<div class="two"><div><label for="city">Città *</label><input id="city" maxlength="70" required></div><div><label for="amount">Prezzo pagato (€) *</label><input id="amount" type="number" min=".01" step=".01" required></div></div>
+<label for="item">Prodotto o servizio acquistato *</label><input id="item" maxlength="140" required>
+<label for="reason">Motivo della segnalazione *</label><select id="reason" required><option value="">Seleziona</option><option>Prezzo eccessivo</option><option>Prezzo non esposto o non chiaro</option><option>Supplemento non comunicato</option><option>Costo aggiuntivo inatteso</option><option>Prezzo diverso da quello pubblicizzato</option><option>Preventivo superato</option><option>Altro problema di trasparenza del prezzo</option></select>
+<label for="story">Descrivi i fatti *</label><textarea id="story" maxlength="700" required placeholder="Racconta cosa è successo, attenendoti ai fatti."></textarea>
+<label class="check"><input id="truth" type="checkbox" required><span>Confermo che la segnalazione è veritiera e non contiene insulti, dati personali o accuse non dimostrate. *</span></label>
+<button class="btn" style="width:100%;margin-top:17px" type="submit">INVIA PER LA REVISIONE</button>
+</form><div id="submitStatus" class="status" aria-live="polite">Connessione al servizio in attesa della configurazione Firebase.</div></div>
+<div class="panel" id="bacheca"><h3>📣 Bacheca dei consumatori</h3><p class="hint">Qui appaiono soltanto le segnalazioni approvate dalla moderazione.</p><div class="tools"><input id="search" placeholder="Cerca attività, città o prodotto"><select id="filter"><option value="">Tutte le categorie</option><option>Prezzo eccessivo</option><option>Prezzo non esposto o non chiaro</option><option>Supplemento non comunicato</option><option>Costo aggiuntivo inatteso</option><option>Prezzo diverso da quello pubblicizzato</option><option>Preventivo superato</option><option>Altro problema di trasparenza del prezzo</option></select></div><div id="feed" class="feed"><div class="status">Le segnalazioni approvate compariranno qui quando Firebase sarà configurato.</div></div><div class="note"><b>Trasparenza e correttezza:</b> una segnalazione è il racconto di un consumatore, non una sentenza. Le pubblicazioni richiedono verifica, moderazione, protezione dei dati e possibilità di replica per l'attività coinvolta.</div></div></div></section>
+</main><footer><div class="foot"><div class="brand">PREZZI <span>VERGOGNA</span></div><p>Il Tripadvisor dei prezzi. Hai pagato troppo? Fallo sapere a tutti.<br>Versione di prova: prima del lancio pubblico occorrono informativa privacy, termini, moderazione e configurazione del database.</p></div></footer>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+import { getFirestore, collection, addDoc, query, where, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+// INCOLLA QUI la configurazione dell'app Web Firebase (non la chiave privata/service account).
+const firebaseConfig = {
+  apiKey: "AIzaSyANoS4XBowo-hDSYVp1fF_xdEX8iIVU22Q",
+  authDomain: "prezzi-vergogna-b4f41.firebaseapp.com",
+  projectId: "prezzi-vergogna-b4f41",
+  storageBucket: "prezzi-vergogna-b4f41.firebasestorage.app",
+  messagingSenderId: "570419125507",
+  appId: "1:570419125507:web:02e428e8694fe26a225d36"
+};
+const statusBox=document.getElementById('submitStatus'),feed=document.getElementById('feed');
+let db=null,auth=null,allReports=[];
+const configured=Object.values(firebaseConfig).every(v=>v && !v.startsWith('INSERISCI'));
+function status(msg,kind=''){statusBox.textContent=msg;statusBox.className='status '+kind}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){
+ const term=document.getElementById('search').value.toLowerCase().trim(),cat=document.getElementById('filter').value;
+ const list=allReports.filter(r=>(!cat||r.reason===cat)&&(!term||[r.business,r.city,r.item,r.reason,r.story].join(' ').toLowerCase().includes(term)));
+ feed.innerHTML='';
+ if(!list.length){feed.innerHTML='<div class="status">Nessuna segnalazione approvata trovata.</div>';return}
+ list.forEach(r=>{const d=document.createElement('article');d.className='card';d.innerHTML=`<div style="display:flex;justify-content:space-between;gap:10px"><span class="tag">SEGNALAZIONE VERIFICATA</span><span class="price">${Number(r.amount).toLocaleString('it-IT',{style:'currency',currency:'EUR'})}</span></div><h4>${esc(r.reason)} — ${esc(r.item)}</h4><p>${esc(r.story)}</p><div class="meta">${esc(r.business)} · ${esc(r.city)}</div>`;feed.appendChild(d)});
+}
+document.getElementById('search').addEventListener('input',render);document.getElementById('filter').addEventListener('change',render);
+if(!configured){status('Firebase non è ancora collegato. Inserisci la configurazione del tuo progetto Firebase per attivare invio e bacheca.','err')}
+else{
+ try{
+  const app=initializeApp(firebaseConfig);db=getFirestore(app);auth=getAuth(app);
+  await signInAnonymously(auth);
+  status('Collegato a Firebase. Le nuove segnalazioni saranno inviate in revisione.','ok');
+  const q=query(collection(db,'reports'),where('status','==','approved'),orderBy('createdAt','desc'));
+  onSnapshot(q,snap=>{allReports=snap.docs.map(d=>({id:d.id,...d.data()}));render()},err=>{console.error(err);status('Errore nel caricamento della bacheca. Controlla le regole Firestore.','err')});
+ }catch(err){console.error(err);status('Connessione Firebase non riuscita: '+err.message,'err')}
+}
+document.getElementById('form').addEventListener('submit',async e=>{
+ e.preventDefault();if(!e.currentTarget.reportValidity())return;
+ if(!db||!auth?.currentUser){status('Il database non è configurato: la segnalazione non è stata inviata.','err');return}
+ const btn=e.currentTarget.querySelector('button');btn.disabled=true;btn.textContent='INVIO IN CORSO…';
+ try{
+  await addDoc(collection(db,'reports'),{
+   business:document.getElementById('business').value.trim(),
+   city:document.getElementById('city').value.trim(),
+   amount:Number(document.getElementById('amount').value),
+   item:document.getElementById('item').value.trim(),
+   reason:document.getElementById('reason').value,
+   story:document.getElementById('story').value.trim(),
+   status:'pending',authorUid:auth.currentUser.uid,createdAt:serverTimestamp()
+  });
+  e.currentTarget.reset();status('Segnalazione ricevuta e messa in revisione. Non è ancora visibile pubblicamente.','ok');
+ }catch(err){console.error(err);status('Invio non riuscito: '+err.message,'err')}
+ finally{btn.disabled=false;btn.textContent='INVIA PER LA REVISIONE'}
+});
+</script>
+</body></html>
