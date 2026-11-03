@@ -80,7 +80,7 @@ document.getElementById('form').addEventListener('submit',async e=>{
    story:document.getElementById('story').value.trim(),
    status:'pending',authorUid:auth.currentUser.uid,createdAt:serverTimestamp()
   });
-  e.currentTarget.reset();status('Segnalazione ricevuta e messa in revisione. Non è ancora visibile pubblicamente.','ok');
+ document.getElementById('form').reset();status('Segnalazione ricevuta e messa in revisione. Non è ancora visibile pubblicamente.','ok');
  }catch(err){console.error(err);status('Invio non riuscito: '+err.message,'err')}
  finally{btn.disabled=false;btn.textContent='INVIA PER LA REVISIONE'}
 });
